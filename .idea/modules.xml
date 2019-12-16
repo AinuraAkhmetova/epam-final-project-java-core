@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Epam Homeworks.iml" filepath="$PROJECT_DIR$/Epam Homeworks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/epam_homeworks.iml" filepath="$PROJECT_DIR$/epam_homeworks.iml" />
     </modules>
   </component>
 </project>
