@@ -1,4 +1,4 @@
-package homework3;
+package homework_3;
 
 public class Customer {
     String lastName;
