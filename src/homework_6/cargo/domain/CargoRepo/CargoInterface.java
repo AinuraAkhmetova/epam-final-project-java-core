@@ -10,4 +10,5 @@ public interface CargoInterface {
     void deleteCargo(long id);
     void printAllCargos();
 
+
 }
