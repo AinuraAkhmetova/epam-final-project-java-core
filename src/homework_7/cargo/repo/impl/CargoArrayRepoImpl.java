@@ -6,13 +6,13 @@ import static homework_7.storage.Storage.cargos;
 import static homework_7.storage.Storage.carriers;
 
 import homework_7.cargo.domain.Cargo;
-import homework_7.cargo.repo.CargoRepo;
+import homework_7.cargo.repo.CargoArrayRepo;
 import homework_7.common.solutions.utils.ArrayUtils;
 import homework_7.storage.IdGenerator;
 
 import java.util.Objects;
 
-public class CargoDefaultRepoImpl implements CargoRepo {
+public  class CargoArrayRepoImpl  implements CargoArrayRepo {
 
   private static final Cargo[] EMPTY_CARGO_ARRAY = new Cargo[0];
 
@@ -97,7 +97,7 @@ public class CargoDefaultRepoImpl implements CargoRepo {
 
   @Override
   public boolean deleteById(long id) {
-    Integer indexToDelete = findEntityIndexInArrayStorageById(carriers, id);
+    Integer indexToDelete = findEntityIndexInArrayStorageById(cargos, id);
 
     if (indexToDelete == null) {
       return false;

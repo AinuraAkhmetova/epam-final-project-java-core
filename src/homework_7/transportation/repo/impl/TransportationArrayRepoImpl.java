@@ -8,7 +8,7 @@ import homework_7.transportation.repo.TransportationRepo;
 
 import static homework_7.storage.Storage.transportationIndex;
 
-public class TransportationDefaultRepoImpl implements TransportationRepo {
+public class TransportationArrayRepoImpl implements TransportationRepo {
 
     @Override
     public void add(Transportation transportation) {

@@ -5,13 +5,14 @@ import static homework_7.storage.Storage.carrierIndex;
 import static homework_7.storage.Storage.carriers;
 
 import homework_7.carrier.domain.Carrier;
-import homework_7.carrier.repo.CarrierRepo;
+import homework_7.carrier.repo.CarrierArrayRepo;
+import homework_7.carrier.repo.CarrierCommonRepo;
 import homework_7.storage.IdGenerator;
 import homework_7.common.solutions.utils.ArrayUtils;
 
 import java.util.Objects;
 
-public class CarrierDefaultRepoImpl implements CarrierRepo {
+public class CarrierArrayRepoImpl implements CarrierArrayRepo {
 
   private static final Carrier[] EMPTY_CARRIER_ARRAY = new Carrier[0];
 
