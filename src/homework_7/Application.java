@@ -2,8 +2,6 @@ package homework_7;
 
 import homework_7.cargo.domain.Cargo;
 import homework_7.cargo.domain.CargoType;
-import homework_7.cargo.repo.CargoArrayRepo;
-import homework_7.cargo.repo.impl.CargoArrayRepoImpl;
 import homework_7.cargo.service.CargoServiceImpl;
 import homework_7.storage.Storage;
 
