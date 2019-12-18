@@ -3,8 +3,6 @@ package homework_7.cargo.repo.impl;
 import static homework_7.common.business.repo.CommonRepoHelper.findEntityIndexInArrayStorageById;
 import static homework_7.storage.Storage.cargoIndex;
 import static homework_7.storage.Storage.cargos;
-import static homework_7.storage.Storage.carriers;
-
 import homework_7.cargo.domain.Cargo;
 import homework_7.cargo.repo.CargoArrayRepo;
 import homework_7.common.solutions.utils.ArrayUtils;
