@@ -112,7 +112,7 @@ public class CarrierArrayRepoImpl implements CarrierRepo {
                 result.add(cargo);
             }
         }
-        return result;
+        return null;
     }
 }
 
