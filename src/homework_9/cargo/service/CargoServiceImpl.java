@@ -45,7 +45,7 @@ public class CargoServiceImpl implements CargoService {
     try {
       return cargoRepo.deleteById(id);
     } catch (NullPointerException e) {
-      return true;
+      return false;
     }
   }
 
