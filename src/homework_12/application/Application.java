@@ -1,12 +1,14 @@
 package homework_12.application;
 
+import static homework_12.storage.initor.StorageInitorFactory.getStorageInitor;
 import static java.util.Collections.singletonList;
 import static homework_12.cargo.domain.CargoField.NAME;
 import static homework_12.cargo.domain.CargoField.WEIGHT;
 import static homework_12.common.solutions.search.OrderType.ASC;
 import static homework_12.common.solutions.search.OrderType.DESC;
 
-import homework_12.FromXMLStorageInitor;
+import homework_12.storage.ExportToFile;
+import homework_12.storage.initor.FromXMLStorageInitor;
 import homework_12.application.serviceholder.ServiceHolder;
 import homework_12.application.serviceholder.StorageType;
 import homework_12.cargo.domain.Cargo;
@@ -17,7 +19,7 @@ import homework_12.carrier.service.CarrierService;
 import homework_12.common.business.exception.checked.InitStorageException;
 import homework_12.common.solutions.search.OrderType;
 import homework_12.common.solutions.utils.CollectionUtils;
-import homework_12.storage.ExportToFile;
+import homework_12.storage.initor.InitStorageType;
 import homework_12.storage.initor.StorageInitor;
 import homework_12.transportation.service.TransportationService;
 import org.xml.sax.SAXException;
@@ -42,15 +44,13 @@ public class Application {
         carrierService = ServiceHolder.getInstance().getCarrierService();
         transportationService = ServiceHolder.getInstance().getTransportationService();
 
-        //StorageInitor storageInitor = getStorageInitor(InitStorageType.TEXT_FILE);
+        StorageInitor storageInitor = getStorageInitor(InitStorageType.TEXT_FILE);
 
-        // storageInitor.initStorage();
-        StorageInitor storageInitor = new FromXMLStorageInitor();
+        //StorageInitor storageInitor = new FromXMLStorageInitor();
         storageInitor.initStorage();
+        ExportToFile exportToFile = new ExportToFile();
+        exportToFile.writeToFile();
 
-
-        /*ExportToFile exportToFile = new ExportToFile();
-        exportToFile.writeToFile();*/
 
         printStorageData();
         //demoSearchOperations();

@@ -1,10 +1,13 @@
 ---Cargo section--
+1 | FOOD | APPLE | 100 | Wed Nov 11 00:00:00 MSK 2020 | -50
+2 | CLOTHERS | JEANS | 200 | XXL | COTTON
+3 | FOOD | ORANGE | 300 | Sat Dec 20 00:00:00 MSK 2025 | -20
 
 ---Carrier section--
-1 | APPLE | null | null
-2 | JEANS | null | null
-3 | ORANGE | null | null
-4 | YOUR_DELIVERY | null | null
-5 | FASTEST EVER | null | null
+4 | YOUR_DELIVERY | Spb, Nevskiy 800 | SHIP
+5 | FASTEST EVER | Sp, Prosveheniya 900 | PLANE
 
 ---Transportation section--
+1 | 4 | Vip order | Ivanov | Thu Nov 11 00:00:00 MSK 2010
+2 | 4 | Fragile | Petrov | Fri Nov 11 00:00:00 MSK 2011
+3 | 5 | Fragile | Sidorov | Sun Jan 01 00:00:00 MSK 2017

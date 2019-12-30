@@ -1,19 +1,11 @@
-package homework_12;
+package homework_12.storage.initor;
 
 import homework_12.cargo.service.CargoService;
 import homework_12.carrier.service.CarrierService;
 import homework_12.transportation.service.TransportationService;
-import homework_12.application.serviceholder.ServiceHolder;
-import homework_12.cargo.domain.Cargo;
-import homework_12.cargo.domain.CargoType;
 import homework_12.cargo.domain.ClothersCargo;
 import homework_12.cargo.domain.FoodCargo;
 import homework_12.carrier.domain.Carrier;
-import homework_12.carrier.domain.CarrierType;
-import homework_12.common.business.exception.checked.InitStorageException;
-import homework_12.common.solutions.utils.FileUtils;
-import homework_12.common.solutions.utils.JavaUtilDataUtils;
-import homework_12.storage.initor.StorageInitor;
 import homework_12.transportation.domain.Transportation;
 
 import org.w3c.dom.*;
@@ -24,9 +16,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class FromXMLStorageInitor implements StorageInitor {
 
@@ -50,7 +40,8 @@ public class FromXMLStorageInitor implements StorageInitor {
         collectInformation(document, TRANSPORTATION);
 
     }
-    public FromXMLStorageInitor(){
+
+    public FromXMLStorageInitor() {
 
         carrierService = homework_12.application.serviceholder.ServiceHolder.getInstance().getCarrierService();
         cargoService = homework_12.application.serviceholder.ServiceHolder.getInstance().getCargoService();
@@ -73,7 +64,6 @@ public class FromXMLStorageInitor implements StorageInitor {
                         clothersCargo.setSize(attributes.getNamedItem("size").getNodeValue());
                         clothersCargo.setMaterial(attributes.getNamedItem("material").getNodeValue());
                         cargoService.save(clothersCargo);
-                        break;
                     }
                     if (attributes.getNamedItem("type").getNodeValue().equals("FOOD")) {
                         FoodCargo foodCargo = new FoodCargo();
@@ -81,8 +71,6 @@ public class FromXMLStorageInitor implements StorageInitor {
                         foodCargo.setWeight(Integer.parseInt(attributes.getNamedItem("weight").getNodeValue()));
                         foodCargo.setStoreTemperature(Integer.parseInt(attributes.getNamedItem("storeTemperature").getNodeValue()));
                         cargoService.save(foodCargo);
-
-                        break;
                     }
                     break;
                 }
@@ -90,7 +78,7 @@ public class FromXMLStorageInitor implements StorageInitor {
                     Carrier carrier = new Carrier();
                     carrier.setName(attributes.getNamedItem("name").getNodeValue());
                     carrier.setAddress(attributes.getNamedItem("address").getNodeValue());
-                   carrierService.save(carrier);
+                    carrierService.save(carrier);
                 }
                 break;
 
