@@ -1,0 +1,10 @@
+---Cargo section--
+
+---Carrier section--
+1 | APPLE | null | null
+2 | JEANS | null | null
+3 | ORANGE | null | null
+4 | YOUR_DELIVERY | null | null
+5 | FASTEST EVER | null | null
+
+---Transportation section--
