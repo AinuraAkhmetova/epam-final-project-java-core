@@ -38,7 +38,6 @@ public class InFileStorageInitor implements StorageInitor {
         readFile();
         SetCargoAndCarrierToTransportation();
         appendTransportationsToCargos();
-
     }
 
     private void readFile() {

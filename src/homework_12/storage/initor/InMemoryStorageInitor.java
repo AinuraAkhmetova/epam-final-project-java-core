@@ -1,8 +1,5 @@
 package homework_12.storage.initor;
 
-
-
-
 import homework_12.application.serviceholder.ServiceHolder;
 import homework_12.cargo.domain.Cargo;
 import homework_12.cargo.domain.ClothersCargo;
