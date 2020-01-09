@@ -222,7 +222,6 @@ public class XmlSaxFileDataInitor extends BaseFileInitor {
         }
     }
 
-
     private class TransportationHandler extends DefaultHandler {
 
         private ParsedTransportation result;
