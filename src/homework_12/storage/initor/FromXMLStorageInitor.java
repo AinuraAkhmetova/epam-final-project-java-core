@@ -39,7 +39,6 @@ public class FromXMLStorageInitor implements StorageInitor {
         collectInformation(document, CARGO);
         collectInformation(document, CARRIER);
         collectInformation(document, TRANSPORTATION);
-
     }
 
     public FromXMLStorageInitor() {
