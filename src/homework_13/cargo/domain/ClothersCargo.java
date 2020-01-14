@@ -25,4 +25,9 @@ public class ClothersCargo extends Cargo {
   public void setMaterial(String material) {
     this.material = material;
   }
+
+  public ClothersCargo(String size, String material) {
+    this.size = size;
+    this.material = material;
+  }
 }

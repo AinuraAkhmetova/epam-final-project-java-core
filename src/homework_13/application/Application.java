@@ -4,6 +4,7 @@ import homework_13.application.serviceholder.ServiceHolder;
 import homework_13.application.serviceholder.StorageType;
 import homework_13.cargo.domain.Cargo;
 import homework_13.cargo.domain.CargoField;
+import homework_13.cargo.domain.CargoType;
 import homework_13.cargo.search.CargoSearchCondition;
 import homework_13.cargo.service.CargoService;
 import homework_13.carrier.service.CarrierService;
@@ -42,6 +43,8 @@ public class Application {
       cargoService = ServiceHolder.getInstance().getCargoService();
       carrierService = ServiceHolder.getInstance().getCarrierService();
       transportationService = ServiceHolder.getInstance().getTransportationService();
+
+
 
       StorageInitor storageInitor = getStorageInitor(InitStorageType.XML_SAX_FILE);
       storageInitor.initStorage();

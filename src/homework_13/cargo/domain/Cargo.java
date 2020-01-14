@@ -42,6 +42,13 @@ public abstract class Cargo extends BaseEntity {
     this.transportations = transportations;
   }
 
+  public Cargo(String name, int weight, List<Transportation> transportations, CargoType cargoType) {
+    this.name = name;
+    this.weight = weight;
+    this.transportations = transportations;
+    this.cargoType = cargoType;
+  }
+
   @Override
   public String toString() {
     return "Cargo{" +
