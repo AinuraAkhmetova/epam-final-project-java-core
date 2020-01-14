@@ -42,6 +42,8 @@ public abstract class Cargo extends BaseEntity {
     this.transportations = transportations;
   }
 
+
+
   @Override
   public String toString() {
     return "Cargo{" +

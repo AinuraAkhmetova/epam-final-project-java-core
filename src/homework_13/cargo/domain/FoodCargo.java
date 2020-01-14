@@ -28,4 +28,5 @@ public class FoodCargo extends Cargo {
     this.storeTemperature = storeTemperature;
   }
 
+
 }

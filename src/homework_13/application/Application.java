@@ -45,7 +45,6 @@ public class Application {
       transportationService = ServiceHolder.getInstance().getTransportationService();
 
 
-
       StorageInitor storageInitor = getStorageInitor(InitStorageType.XML_SAX_FILE);
       storageInitor.initStorage();
 

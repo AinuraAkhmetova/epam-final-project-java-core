@@ -26,4 +26,5 @@ public class ClothersCargo extends Cargo {
     this.material = material;
   }
 
+
 }
