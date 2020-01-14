@@ -11,8 +11,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-import static homework_13.cargo.domain.CargoField.NAME;
-import static homework_13.cargo.domain.CargoField.WEIGHT;
+import static homework_14.cargo.domain.CargoField.NAME;
+import static homework_14.cargo.domain.CargoField.WEIGHT;
 
 public abstract class CommonCargoRepo implements CargoRepo {
 

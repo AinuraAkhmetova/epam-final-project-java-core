@@ -8,7 +8,7 @@ import homework_14.storage.IdGenerator;
 
 import java.util.*;
 
-import static homework_13.storage.Storage.cargoCollection;
+import static homework_14.storage.Storage.cargoCollection;
 
 public class CargoCollectionRepoImpl extends CommonCargoRepo {
 

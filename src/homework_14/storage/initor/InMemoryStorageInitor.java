@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static homework_13.common.solutions.utils.CollectionUtils.isNotEmpty;
+import static homework_14.common.solutions.utils.CollectionUtils.isNotEmpty;
 
 public class InMemoryStorageInitor implements StorageInitor {
 

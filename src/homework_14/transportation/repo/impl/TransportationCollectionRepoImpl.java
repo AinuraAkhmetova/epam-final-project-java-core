@@ -8,7 +8,7 @@ import homework_14.transportation.repo.TransportationRepo;
 import java.util.Iterator;
 import java.util.List;
 
-import static homework_13.storage.Storage.transportationCollection;
+import static homework_14.storage.Storage.transportationCollection;
 
 public class TransportationCollectionRepoImpl implements TransportationRepo {
 

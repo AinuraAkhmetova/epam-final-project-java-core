@@ -27,9 +27,4 @@ public class FoodCargo extends Cargo {
   public void setStoreTemperature(int storeTemperature) {
     this.storeTemperature = storeTemperature;
   }
-
-  public FoodCargo(Date expirationDate, int storeTemperature) {
-    this.expirationDate = expirationDate;
-    this.storeTemperature = storeTemperature;
-  }
 }

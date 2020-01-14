@@ -1,5 +1,9 @@
-package homework_14.storage.initor.fileinitor;
+package homework_14.storage.initor.fileinitor.xml.dom;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import homework_14.cargo.domain.Cargo;
 import homework_14.cargo.domain.CargoType;
 import homework_14.cargo.domain.ClothersCargo;
@@ -10,11 +14,8 @@ import homework_14.common.business.exception.checked.InitStorageException;
 import homework_14.common.solutions.utils.FileUtils;
 import homework_14.common.solutions.utils.JavaUtilDateUtils;
 import homework_14.common.solutions.utils.xml.dom.XmlDomUtils;
+import homework_14.storage.initor.fileinitor.BaseFileInitor;
 import homework_14.transportation.domain.Transportation;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,12 +23,12 @@ import java.text.ParseException;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.*;
 
-import static homework_13.common.solutions.utils.xml.dom.XmlDomUtils.getOnlyElement;
-import static homework_13.common.solutions.utils.xml.dom.XmlDomUtils.getOnlyElementTextContent;
+import static homework_14.common.solutions.utils.xml.dom.XmlDomUtils.getOnlyElement;
+import static homework_14.common.solutions.utils.xml.dom.XmlDomUtils.getOnlyElementTextContent;
 
 public class XmlDomFileDataInitor extends BaseFileInitor {
 
-  private static final String FILE = "/homework_13/xmldata.xml";
+  private static final String FILE = "/ru/epam/javacore/lesson_13_sax_parser_recursion/initdata/xmldata.xml";
 
 
   @Override
