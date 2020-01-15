@@ -123,6 +123,7 @@ public class InMemoryStorageInitor implements StorageInitor {
         cargoTransportations.add(transportation);
       }
     }
+
     cargo.setTransportations(transportations);
   }
 }
