@@ -96,6 +96,7 @@ public class TestSerialization {
     }
 
     private static FoodCargo createFoodCargo(String name, int weight, int tempereture, Long id) {
+
         FoodCargo foodCargo = new FoodCargo();
         foodCargo.setId(id);
         foodCargo.setStoreTemperature(tempereture);
@@ -105,6 +106,7 @@ public class TestSerialization {
     }
 
     private static ClothersCargo createClothersCargo(String name, int weight, String size, Long id) {
+
         ClothersCargo clothersCargo = new ClothersCargo();
         clothersCargo.setId(id);
         clothersCargo.setSize(size);
@@ -114,6 +116,7 @@ public class TestSerialization {
     }
 
     private static Carrier createCarrier(Long id, String address, CarrierType carrierType, String name) {
+
         Carrier carrier = new Carrier();
         carrier.setName(name);
         carrier.setCarrierType(carrierType);
@@ -135,6 +138,7 @@ public class TestSerialization {
     }
 
     private static void writerToFile() {
+
         Path file = null;
         try {
             file = Files.createTempFile("lesson14", ".txt");
