@@ -68,7 +68,7 @@ public abstract class BaseFileInitor implements StorageInitor {
     }
   }
 
-  public static class ParsedTransportation {
+  protected static class ParsedTransportation {
     private String cargoRef;
     private String carrierRef;
     private Transportation transportation;

@@ -1,6 +1,8 @@
 package homework_14.carrier.domain;
 
-public enum CarrierType {
+import java.io.Serializable;
+
+public enum CarrierType implements Serializable {
     SHIP,
     PLANE,
     CAR,

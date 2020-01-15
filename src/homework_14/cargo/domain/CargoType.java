@@ -1,6 +1,8 @@
 package homework_14.cargo.domain;
 
-public enum CargoType {
+import java.io.Serializable;
+
+public enum CargoType implements Serializable {
     FOOD,
     CLOTHERS
 }

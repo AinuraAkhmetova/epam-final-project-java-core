@@ -1,6 +1,8 @@
 package homework_14.cargo.domain;
 
-public class ClothersCargo extends Cargo {
+import java.io.Serializable;
+
+public class ClothersCargo extends Cargo implements Serializable {
 
   private String size;
   private String material;
@@ -25,4 +27,6 @@ public class ClothersCargo extends Cargo {
   public void setMaterial(String material) {
     this.material = material;
   }
+
+
 }

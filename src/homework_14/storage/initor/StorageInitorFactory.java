@@ -1,34 +1,34 @@
 package homework_14.storage.initor;
 
 import homework_14.storage.initor.fileinitor.TextFileDataInitor;
-import homework_14.storage.initor.fileinitor.xml.dom.XmlDomFileDataInitor;
-import homework_14.storage.initor.fileinitor.xml.sax.XmlSaxFileDataInitor;
+import homework_14.storage.initor.fileinitor.XmlDomFileDataInitor;
+import homework_14.storage.initor.fileinitor.XmlSaxFileDataInitor;
 
 public final class StorageInitorFactory {
 
-    private StorageInitorFactory() {
+  private StorageInitorFactory() {
 
+  }
+
+  public static StorageInitor getStorageInitor(InitStorageType initStorageType) {
+    switch (initStorageType) {
+
+      case MEMORY: {
+        return new InMemoryStorageInitor();
+      }
+      case TEXT_FILE: {
+        return new TextFileDataInitor();
+      }
+      case XML_DOM_FILE:{
+        return new XmlDomFileDataInitor();
+      }
+      case XML_SAX_FILE:{
+        return new XmlSaxFileDataInitor();
+
+      }      default: {
+        throw new RuntimeException("Unknown storage init type " + initStorageType);
+      }
     }
-
-    public static StorageInitor getStorageInitor(InitStorageType initStorageType) {
-        switch (initStorageType) {
-
-            case MEMORY: {
-                return new InMemoryStorageInitor();
-            }
-            case TEXT_FILE: {
-                return new TextFileDataInitor();
-            }
-            case XML_DOM_FILE: {
-                return new XmlDomFileDataInitor();
-            }
-            case XML_SAX_FILE: {
-                return new XmlSaxFileDataInitor();
-            }
-            default: {
-                throw new RuntimeException("Unknown storage init type " + initStorageType);
-            }
-        }
-    }
+  }
 
 }

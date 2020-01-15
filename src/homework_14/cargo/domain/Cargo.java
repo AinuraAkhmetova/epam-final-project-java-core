@@ -3,9 +3,10 @@ package homework_14.cargo.domain;
 import homework_14.common.business.domain.BaseEntity;
 import homework_14.transportation.domain.Transportation;
 
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Cargo extends BaseEntity {
+public abstract class Cargo extends BaseEntity implements Serializable {
 
   protected String name;
   protected int weight;
@@ -41,6 +42,8 @@ public abstract class Cargo extends BaseEntity {
   public void setTransportations(List<Transportation> transportations) {
     this.transportations = transportations;
   }
+
+
 
   @Override
   public String toString() {

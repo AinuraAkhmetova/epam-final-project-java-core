@@ -1,9 +1,5 @@
-package homework_14.storage.initor.fileinitor.xml.dom;
+package homework_14.storage.initor.fileinitor;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import homework_14.cargo.domain.Cargo;
 import homework_14.cargo.domain.CargoType;
 import homework_14.cargo.domain.ClothersCargo;
@@ -14,8 +10,11 @@ import homework_14.common.business.exception.checked.InitStorageException;
 import homework_14.common.solutions.utils.FileUtils;
 import homework_14.common.solutions.utils.JavaUtilDateUtils;
 import homework_14.common.solutions.utils.xml.dom.XmlDomUtils;
-import homework_14.storage.initor.fileinitor.BaseFileInitor;
 import homework_14.transportation.domain.Transportation;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,7 +27,7 @@ import static homework_14.common.solutions.utils.xml.dom.XmlDomUtils.getOnlyElem
 
 public class XmlDomFileDataInitor extends BaseFileInitor {
 
-  private static final String FILE = "/ru/epam/javacore/lesson_13_sax_parser_recursion/initdata/xmldata.xml";
+  private static final String FILE = "/homework_14/xmldata.xml";
 
 
   @Override
@@ -62,6 +61,7 @@ public class XmlDomFileDataInitor extends BaseFileInitor {
 
   private Map<String, Cargo> parseCargos(Document doc) throws ParseException {
     Map<String, Cargo> cargos = new LinkedHashMap<>();
+
 
     Element root = getOnlyElement(doc, "cargos");
     NodeList xmlCargos = root.getElementsByTagName("cargo");

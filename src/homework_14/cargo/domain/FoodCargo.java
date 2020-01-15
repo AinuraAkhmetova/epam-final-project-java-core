@@ -1,8 +1,9 @@
 package homework_14.cargo.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class FoodCargo extends Cargo {
+public class FoodCargo extends Cargo implements Serializable {
 
   private Date expirationDate;
   private int storeTemperature;
@@ -27,4 +28,6 @@ public class FoodCargo extends Cargo {
   public void setStoreTemperature(int storeTemperature) {
     this.storeTemperature = storeTemperature;
   }
+
+
 }
