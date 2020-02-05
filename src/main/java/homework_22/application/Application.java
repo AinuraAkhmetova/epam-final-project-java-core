@@ -1,33 +1,30 @@
-package homework_14.application;
+package homework_22.application;
 
-import homework_14.application.serviceholder.ServiceHolder;
-import homework_14.application.serviceholder.StorageType;
-import homework_14.cargo.domain.Cargo;
-import homework_14.cargo.domain.CargoField;
-import homework_14.cargo.search.CargoSearchCondition;
-import homework_14.cargo.service.CargoService;
-import homework_14.carrier.service.CarrierService;
-import homework_14.common.business.exception.checked.InitStorageException;
-import homework_14.common.business.exception.checked.ReportException;
-import homework_14.common.solutions.search.OrderType;
-import homework_14.common.solutions.utils.CollectionUtils;
-import homework_14.reporting.ReportDefaultService;
-import homework_14.reporting.ReportService;
-import homework_14.storage.initor.InitStorageType;
-import homework_14.storage.initor.StorageInitor;
-import homework_14.transportation.service.TransportationService;
+import homework_22.application.serviceholder.ServiceHolder;
+import homework_22.application.serviceholder.StorageType;
+import homework_22.cargo.domain.Cargo;
+import homework_22.cargo.domain.CargoField;
+import homework_22.cargo.search.CargoSearchCondition;
+import homework_22.cargo.service.CargoService;
+import homework_22.carrier.service.CarrierService;
+import homework_22.common.business.exception.checked.InitStorageException;
+import homework_22.common.business.exception.checked.ReportException;
+import homework_22.common.solutions.search.OrderType;
+import homework_22.common.solutions.utils.CollectionUtils;
+import homework_22.reporting.ReportDefaultService;
+import homework_22.reporting.ReportService;
+import homework_22.storage.initor.InitStorageType;
+import homework_22.storage.initor.StorageInitor;
+import homework_22.transportation.service.TransportationService;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
+import java.util.*;
 
-import static homework_14.cargo.domain.CargoField.NAME;
-import static homework_14.cargo.domain.CargoField.WEIGHT;
-import static homework_14.common.solutions.search.OrderType.ASC;
-import static homework_14.common.solutions.search.OrderType.DESC;
-import static homework_14.storage.initor.StorageInitorFactory.getStorageInitor;
 import static java.util.Collections.singletonList;
+import static homework_22.cargo.domain.CargoField.NAME;
+import static homework_22.cargo.domain.CargoField.WEIGHT;
+import static homework_22.common.solutions.search.OrderType.ASC;
+import static homework_22.common.solutions.search.OrderType.DESC;
+import static homework_22.storage.initor.StorageInitorFactory.getStorageInitor;
 
 public class Application {
 
@@ -43,8 +40,7 @@ public class Application {
       carrierService = ServiceHolder.getInstance().getCarrierService();
       transportationService = ServiceHolder.getInstance().getTransportationService();
 
-
-      StorageInitor storageInitor = getStorageInitor(InitStorageType.MEMORY);
+      StorageInitor storageInitor = getStorageInitor(InitStorageType.MULTI_THREAD);
       storageInitor.initStorage();
 
       printStorageData();
@@ -139,19 +135,24 @@ public class Application {
   private static void demoExceptions() {
     System.out.println("------Demo  exceptions------------");
     Long firstCargo = cargoService.getAll().get(0).getId();
-    Cargo cargo = cargoService.getByIdFetchingTransportations(firstCargo);
-    System.out.println("Try to delete cargo");
-    System.out.println("Cargo details:");
-    System.out.println("id: " + cargo.getId());
-    System.out.println("name: " + cargo.getName());
-    System.out.println("total transportations: " + (cargo.getTransportations() != null ? cargo
-        .getTransportations().size() : 0));
-    System.out.println();
-    try {
-      cargoService.deleteById(cargo.getId());
-    } catch (Exception e) {
-      System.out.println("OOPS, something went wrong!");
-      System.out.println(e.getMessage());
+    Optional<Cargo> cargoOptional = cargoService.getByIdFetchingTransportations(firstCargo);
+
+    if (cargoOptional.isPresent()) {
+      Cargo cargo = cargoOptional.get();
+
+      System.out.println("Try to delete cargo");
+      System.out.println("Cargo details:");
+      System.out.println("id: " + cargo.getId());
+      System.out.println("name: " + cargo.getName());
+      System.out.println("total transportations: " + (cargo.getTransportations() != null ? cargo
+          .getTransportations().size() : 0));
+      System.out.println();
+      try {
+        cargoService.deleteById(cargo.getId());
+      } catch (Exception e) {
+        System.out.println("OOPS, something went wrong!");
+        System.out.println(e.getMessage());
+      }
     }
   }
 
